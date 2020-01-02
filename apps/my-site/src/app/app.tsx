@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react';
 import './app.scss';
 
 import { Route, Link } from 'react-router-dom';
+import { PageTitle } from '@nrwl/ui-header';
+import { ApiResponse, API_URL } from '@nrwl/api-interface';
 
 export const App = () => {
-  const [apiResponse, setApiResponse] = useState({ message: 'Loading...' });
+  const [apiResponse, setApiResponse] = useState<ApiResponse>({
+    message: 'Loading...'
+  });
   useEffect(() => {
-    fetch('/api')
+    fetch(API_URL)
       .then(response => response.json())
       .then(setApiResponse);
   }, []);
@@ -18,6 +22,7 @@ export const App = () => {
    */
   return (
     <div className="app">
+      <PageTitle />
       <header className="flex">
         <img
           alt=""
