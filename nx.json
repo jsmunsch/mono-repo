@@ -13,6 +13,9 @@
     },
     "my-site-e2e": {
       "tags": []
+    },
+    "ui-header": {
+      "tags": []
     }
   }
 }
